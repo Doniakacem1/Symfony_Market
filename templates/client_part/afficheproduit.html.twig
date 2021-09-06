@@ -1,0 +1,38 @@
+{% extends 'base1.html.twig' %}
+{% block body %}
+<style>
+.single_offers
+{
+margin: 20px;
+padding: 20px;}
+
+</style>
+<div class="container">
+
+        <div class="row">    
+   
+                {% for p in produit %}
+               
+                      
+            <div class="single_offers" >
+                <div class="about_thumb">
+                    <img src="{{asset('posters/'~ p.image)}}" width="80" height="50">
+                </div>
+                <h3>{{ p.designation }}  </h3>
+                <ul>
+                    <li><h6> catégorie:</h6> {{ p.categorie.getNom() }}</li>
+                    <li> <h6> prix:</h6> {{ p.prixttc }}</li>
+                </ul> 
+               
+                <a href="{{path('commander')}}" class="book_now">Commander</a><br><br>
+            </div>
+        
+            {% endfor %}
+            
+        </div>
+    </div>
+
+   
+</div> 
+    
+{% endblock %}

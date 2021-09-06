@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div>
+    {% for message in app.flashes('success') %}
+    <div class="alert alert-dismissible alert-info">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>{{message}}</strong> 
+      <a href="#" class="alert-link"></a>
+    </div>
+    {% endfor %}
+</div>
+<h1>Liste des commandes </h1> <a href="{{path('addcommande')}}"  type="button" class="btn btn-primary"> <i class="fas fa-plus-circle"></i>Ajouter une commande</a>
+<div class="card">
+    <h5 class="card-header"></h5>
+    <div class="card-body">
+        <div class="table-responsive">
+            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="DataTables_Table_0"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered first dataTable" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                <thead>
+                    <tr role="row">
+                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 100px;">id commande</th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width:50px;">date commande</th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width:50px;">prix totale</th>
+
+                      <th </th>
+                      </thead>
+    <tbody>
+        {% for c in commande %}
+        <tr role="row" class="odd">
+              <td class="sorting_1">{{c.id}}</td>
+              <td>{{ "now"|date("m/d/Y") }}</td>
+              <td>{{c.prixtotale}}</td>
+              <td> </td>
+              
+              
+             
+              <td> <a  href="{{ path('updatecommande', {'id': c.id }) }}" type="button" class="btn btn-success"><i class="fas fa-pen-square"></i></button>
+                <a href="{{ path('deletecommande', {'id': c.id }) }}" type="button" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button></td>
+          </tr> {% endfor %}</tbody>
+        
+      
+     
+      
+    </tbody>
+  </table></div></div>
+  <div class="row">
+    <div class="col-sm-12 col-md-5">
+      <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
+        Showing 1 to 10 of 57 entries
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-7">
+      <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+        <ul class="pagination"><li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous">
+          <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+        </li>
+        <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+        <li class="paginate_button page-item ">
+          <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+          <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div></div>
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header">
+                   Produits
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Gérer les produits...</p>
+                    <a href="{{path('produit')}}" class="btn btn-primary1">Details</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                <div class="card">
+                    <div class="card-header">
+                       Clients
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Gérer les clients...</p>
+                        <a href="{{path('client')}}" class="btn btn-primary1">Details</a>
+                    </div>
+                </div>
+            </div>
+       
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-header">
+                           Categories
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Gérer les categories...</p>
+                            <a href="{{path('categorie')}}" class="btn btn-primary1">Details</a>
+                        </div>
+                    </div>
+            </div>
+                
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                               Commandes
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Gérer les commandes...</p>
+                                <a href="{{path('commande')}}" class="btn btn-primary1">Details</a>
+                            </div>
+                        </div>
+                    </div>
+{% endblock %}
